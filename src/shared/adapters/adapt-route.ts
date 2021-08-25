@@ -1,7 +1,12 @@
 import { Request, Response } from 'express'
 
-export const adaptRoute = (controller: IController) => {
-    return async (req: Request, res: Response) => {
+// a assinatura dessa função é 
+// function adaptRoute(controller: IController): (req: any, res: any) => Promise<void>
+
+// (req: any, res: any) é um tipo de função que deve retornar uma Promise vazia
+// e essa é exatamente uma das assinaturas possíveis que podem ser passadas dentro do arquivo de rotas
+export function adaptRoute(controller: IController) {
+    return async function map(req: Request, res: Response) {
         const httpRequest: IHttpRequest = {
             body: req.body
         }
