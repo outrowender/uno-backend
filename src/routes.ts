@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { CreateRoomController } from './controllers/create-room-controller';
-import { adaptRoute } from './shared/adapt-route';
+import { adaptRoute } from './shared/adapters/adapt-route';
 
 const router = Router();
 
