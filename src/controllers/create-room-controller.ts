@@ -1,5 +1,5 @@
 import room from "../models/room";
-import { IController, IHttpRequest, IHttpResponse } from "../shared/adapt-route";
+import { IController, IHttpRequest, IHttpResponse } from "../shared/adapters/adapt-route";
 
 export class CreateRoomController implements IController {
 
@@ -10,7 +10,7 @@ export class CreateRoomController implements IController {
                 guests: []
             })
             return {
-                body: "Oieee",
+                body: `Nome: ${request.header.nome}` ,
                 statusCode: 200
             }
         } catch (error) {

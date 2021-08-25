@@ -8,8 +8,10 @@ import { Request, Response } from 'express'
 export function adaptRoute(controller: IController) {
     return async function map(req: Request, res: Response) {
         const httpRequest: IHttpRequest = {
+            header:req.headers,
             body: req.body
         }
+        console.log(req.headers)
         const httpResponse = await controller.handle(httpRequest)
         res.status(httpResponse.statusCode).json(httpResponse.body)
     }
@@ -20,6 +22,7 @@ export interface IController {
 }
 
 export interface IHttpRequest {
+    header?: any
     body?: any
 }
 
