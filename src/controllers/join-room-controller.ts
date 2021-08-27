@@ -1,4 +1,4 @@
-import { IController, IHttpRequest, IHttpResponse } from "../shared/adapt-route";
+import { IController, IHttpRequest, IHttpResponse } from "../shared/adapters/adapt-route";
 
 export class JoinRoomController implements IController {
 
