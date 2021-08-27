@@ -1,12 +1,13 @@
-import room from "../models/room";
+import room from "../database/room";
 import { IController, IHttpRequest, IHttpResponse } from "../shared/adapters/adapt-route";
 
 export class CreateRoomController implements IController {
 
     async handle(request: IHttpRequest): Promise<IHttpResponse<any>> {
         try {
+            debugger;
             await room.create({
-                owner: "Nicolindo",
+                owner: "DearAne",
                 guests: []
             })
             return {
