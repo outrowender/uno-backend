@@ -8,10 +8,9 @@ import { Request, Response } from 'express'
 export function adaptRoute(controller: IController) {
     return async function map(req: Request, res: Response) {
         const httpRequest: IHttpRequest = {
-            header:req.headers,
+            header: req.headers,
             body: req.body
         }
-        console.log(req.headers)
         const httpResponse = await controller.handle(httpRequest)
         res.status(httpResponse.statusCode).json(httpResponse.body)
     }
