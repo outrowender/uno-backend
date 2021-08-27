@@ -5,9 +5,8 @@ export class CreateRoomController implements IController {
 
     async handle(request: IHttpRequest): Promise<IHttpResponse<any>> {
         try {
-            debugger;
             await room.create({
-                owner: "DearAne",
+                owner: request.header.nome,
                 guests: []
             })
             return {
